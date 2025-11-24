@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Netflix Clone</title>
+    <link rel="stylesheet" href="netflix.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="logo">NETFLIX</div>
+
+        <div class="top-controls">
+
+            <input type="text" id="buscador" placeholder="Buscar producción..." onkeyup="buscarPelicula()">
+
+            <select id="filtro-genero" onchange="filtrarPeliculas()">
+                <option value="">Género</option>
+                <option value="Acción">Acción</option>
+                <option value="Drama">Drama</option>
+                <option value="Comedia">Comedia</option>
+                <option value="Terror">Terror</option>
+            </select>
+
+            <select id="filtro-anio" onchange="filtrarPeliculas()">
+                <option value="">Año</option>
+                <option value="2025">2025</option>
+                <option value="2024">2024</option>
+                <option value="2023">2023</option>
+                <option value="2022">2022</option>
+            </select>
+
+            <select id="filtro-idioma" onchange="filtrarPeliculas()">
+                <option value="">Idioma</option>
+                <option value="Español">Español</option>
+                <option value="Inglés">Inglés</option>
+                <option value="Coreano">Coreano</option>
+                <option value="Japonés">Japonés</option>
+            </select>
+
+            <button class="btn-add" onclick="abrirModal()">+ Agregar</button>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Producciones Netflix</h1>
+            <p>Tu colección personalizada</p>
+        </div>
+    </section>
+
+    <label>Tipo</label>
+    <select id="tipo">
+        <option value="pelicula">Película</option>
+        <option value="serie">Serie</option>
+        <option value="anime">Anime</option>
+    </select>
+
+    <h2 class="section-title">Películas</h2>
+    <div id="lista-peliculas" class="grid"></div>
+
+    <h2 class="section-title">Series</h2>
+    <div id="lista-series" class="grid"></div>
+
+    <h2 class="section-title">Animes</h2>
+    <div id="lista-animes" class="grid"></div>
+
+    <!-- Modal para agregar producción -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <h2>Agregar Producción</h2>
+            <input id="titulo" type="text" placeholder="Título">
+            <input id="genero" type="text" placeholder="Género">
+            <input id="anio" type="number" placeholder="Año">
+            <input id="idioma" type="text" placeholder="Idioma">
+            <input id="imagen" type="text" placeholder="URL de Imagen (opcional)">
+            <button onclick="guardarPelicula()">Guardar</button>
+            <button class="btn-close" onclick="cerrarModal()">Cancelar</button>
+        </div>
+    </div>
+
+    <script src="netflix.js"></script>
+</body>
+</html>
+

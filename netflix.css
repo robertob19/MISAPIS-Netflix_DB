@@ -1,0 +1,301 @@
+
+body {
+    background-color: #141414;
+    color: white;
+    margin: 0;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-thumb {
+    background: #e50914;
+    border-radius: 10px;
+}
+
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 40px;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(5px);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.logo {
+    color: #e50914;
+    font-size: 32px;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+
+.top-controls {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.top-controls input,
+.top-controls select {
+    background: #202020;
+    border: 1px solid #333;
+    padding: 10px 12px;
+    border-radius: 5px;
+    color: white;
+}
+
+.top-controls input {
+    width: 200px;
+}
+
+.btn-add {
+    background-color: #e50914;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.btn-add:hover {
+    background-color: #b20710;
+}
+
+
+.hero {
+    background: url("https://wallpaperaccess.com/full/6321556.jpg") center/cover no-repeat;
+    height: 420px;
+    display: flex;
+    align-items: center;
+    padding-left: 40px;
+    box-shadow: inset 0 -120px 150px #141414;
+}
+
+.hero-content h1 {
+    font-size: 58px;
+    margin: 0;
+    text-shadow: 0 0 15px #000;
+}
+
+.hero-content p {
+    font-size: 22px;
+    opacity: 0.9;
+    text-shadow: 0 0 10px #000;
+}
+
+
+.section-title {
+    margin: 30px;
+    font-size: 26px;
+    font-weight: bold;
+}
+
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    gap: 22px;
+    padding: 20px 40px;
+}
+
+
+.card {
+    background-color: #1f1f1f;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    cursor: pointer;
+    position: relative;
+}
+
+.card:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 25px rgba(229, 9, 20, 0.6);
+}
+
+.card img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 15px;
+}
+
+.card h3 {
+    margin: 10px 0 5px;
+    font-size: 18px;
+}
+
+.card small {
+    opacity: 0.7;
+}
+
+
+.trend-slider {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    padding: 20px 40px;
+}
+
+.trend-slider::-webkit-scrollbar {
+    height: 8px;
+}
+
+.trend-slider::-webkit-scrollbar-thumb {
+    background: #e50914;
+    border-radius: 10px;
+}
+
+.trend-card {
+    min-width: 250px;
+    height: 150px;
+    background: #1f1f1f;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.2s;
+}
+
+.trend-card:hover {
+    transform: scale(1.08);
+}
+
+.trend-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.85);
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.modal-content {
+    background: #202020;
+    padding: 30px;
+    border-radius: 10px;
+    width: 350px;
+}
+
+.modal-content input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 12px;
+    background: #333;
+    border: none;
+    border-radius: 5px;
+    color: white;
+}
+
+.modal-content button {
+    width: 100%;
+    padding: 12px;
+    background: #e50914;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.btn-close {
+    background: gray;
+}
+
+/* ===============================
+   ESTILO PARA CATEGORÍAS (PELIS / SERIES / ANIMES)
+   =============================== */
+.section-title {
+    margin: 40px 40px 10px;
+    font-size: 28px;
+    font-weight: 900;
+    color: #fff;
+    border-left: 5px solid #e50914;
+    padding-left: 12px;
+}
+
+/* Mejor separación entre las secciones */
+#lista-peliculas,
+#lista-series,
+#lista-animes {
+    margin-bottom: 40px;
+}
+
+/* Título de cada categoría */
+#lista-peliculas::before,
+#lista-series::before,
+#lista-animes::before {
+    content: '';
+    display: block;
+    height: 2px;
+    width: 100%;
+    background: #333;
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
+
+/* ===============================
+   BOTÓN DEL SELECTOR DE TIPO
+   =============================== */
+
+label {
+    margin-left: 40px;
+    margin-top: 25px;
+    display: block;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#tipo {
+    margin-left: 40px;
+    background: #202020;
+    border: 1px solid #333;
+    padding: 10px 12px;
+    border-radius: 5px;
+    color: white;
+    margin-bottom: 20px;
+}
+
+/* Botón Eliminar */
+.btn-delete {
+    margin-top: 8px;
+    padding: 5px 10px;
+    background-color: #e50914; /* rojo Netflix */
+    border: none;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.btn-delete:hover {
+    background-color: #b81d24; /* rojo más oscuro al pasar el mouse */
+}
+
